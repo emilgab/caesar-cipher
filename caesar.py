@@ -14,14 +14,14 @@ class CaesarCipher():
         # goes through the message and encrypts it using the index position of each letter in the original alphabet.
         encrypted_msg = ""
         for char in message:
-            encrypted_msg += self.cipher_alphabet[(self.alphabet.index(char))]
+            encrypted_msg += self.cipher_alphabet[(self.alphabet.index(char.lower()))]
         return encrypted_msg
     
     def decrypt(self, message):
         # reverses the process of encryption by using the ciphered alphabet index in the original alphabet.
         decrypted_msg = ""
         for char in message:
-            decrypted_msg += self.alphabet[(self.cipher_alphabet.index(char))]
+            decrypted_msg += self.alphabet[(self.cipher_alphabet.index(char.lower()))]
         return decrypted_msg
     
     def __repr__(self):
