@@ -32,3 +32,18 @@ class CaesarCipher():
     
     def __repr__(self):
         return f"The seed for this cipher is {self.seed}"
+    
+if __name__ == "__main__":
+    seed_in = int(input("What should the seed (position fix) be? "))
+    t = CaesarCipher(seed_in)
+    print("Cipher created successfully! Seed: {} \n".format(t.seed))
+    decision = input("Type ENC to encrypt a message or DEC to decrypt as message. ")
+    if decision.lower() == "enc":
+        raw_msg = input("What message do you want to encrypt? ")
+        print("Your encrypted message is: ")
+        t.encrypt(raw_msg)
+    elif decision.lower() == "dec":
+        enc_msg = input("What encrypted message do you want to decrypt? ")
+        print("Your message decrypted reads: ")
+        t.decrypt(enc_msg)
+    
